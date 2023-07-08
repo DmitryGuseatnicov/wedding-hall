@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import { IcMapPin, IcLogo, IcMenu } from '@/assets/icons';
-import { SocialLink } from '@/components/SocialLink';
-import { AppNavbar } from '@/components/AppNavbar';
-
 import { useBreakpoints, useBooleanState } from '@/hooks';
 import { APP_INFO } from '@/constants';
-import { VButton } from '../VButton';
+import { SocialLink } from '@/components/SocialLink';
+import { AppNavbar } from '@/components/AppNavbar';
+import { VButton } from '@/components/VButton';
 
 const { breakPointType } = useBreakpoints();
 
@@ -146,7 +145,7 @@ const handleCallButtonClick = () => {
     &__phone-link {
       color: $color-second;
 
-      @include text-main-small;
+      @include text-second;
     }
 
     &__call-button {

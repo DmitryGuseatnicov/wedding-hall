@@ -18,7 +18,7 @@ defineProps<AppNavbarItemProps>();
 
 <style lang="scss">
 .app-navbar-item {
-    color: $color-main-darker;
+    color: $color-main-darkness;
     text-decoration: none;
     display: inline-block;
     padding: 0 16px 16px 16px;

@@ -45,17 +45,24 @@
 }
 
 @mixin text-main-small {
+    font-family: $font-main;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+@mixin text-second {
     font-family: $font-second;
     font-size: 15px;
     font-weight: 400;
     line-height: 20px;
 }
 
-@mixin text-main-xsmall {
-    font-family: $font-main;
-    font-size: 14px;
+@mixin text-second-small {
+    font-family: $font-second;
+    font-size: 12px;
     font-weight: 400;
-    line-height: 20px;
+    line-height: 15px;
 }
 
 @mixin drop-shadow {

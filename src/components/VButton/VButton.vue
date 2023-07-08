@@ -48,7 +48,7 @@ const classes = computed(() => [
   border: none;
   cursor: pointer;
 
-  @include text-main-small;
+  @include text-second;
   @include centered-flexbox;
 
   &_size_fit-content {
