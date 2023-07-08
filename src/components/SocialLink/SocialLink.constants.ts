@@ -1,22 +1,23 @@
 import {
   IcFacebook, IcTelegram, IcVk, IcWhatsUp,
 } from '@/assets/icons';
+import { APP_INFO } from '@/constants';
 
 export const APP_SOCIAL_INFO = {
   facebook: {
-    link: '/change-me',
+    link: APP_INFO.social.facebook,
     Icon: IcFacebook,
   },
   vk: {
-    link: '/change-me',
+    link: APP_INFO.social.vk,
     Icon: IcVk,
   },
   telegram: {
-    link: '/change-me',
+    link: APP_INFO.social.telegram,
     Icon: IcTelegram,
   },
   whatsapp: {
-    link: '/change-me',
+    link: APP_INFO.social.whatsapp,
     Icon: IcWhatsUp,
   },
 };

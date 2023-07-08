@@ -1,5 +1,5 @@
 <template>
   <div class="home">
-      123
+      Not Found
   </div>
 </template>
