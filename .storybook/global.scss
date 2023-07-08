@@ -1,3 +1,11 @@
+@import '../src/assets/styles/mixins.scss';
+@import '../src/assets/styles/variables.scss';
+
+html {
+  background: $background-main;
+  @include text-main;
+}
+
 html,
 body {
   height: 100% !important;

@@ -65,10 +65,6 @@
     line-height: 15px;
 }
 
-@mixin drop-shadow {
-    box-shadow: 0px 8px 16px 0px #2223241A;
-}
-
 @mixin app-container {
     max-width: 1608px;
     padding: 0 20px;

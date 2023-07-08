@@ -1,26 +1,23 @@
 <script setup lang="ts">
-import { computed } from 'vue';
 import { vMaska } from 'maska';
 
 import { VInputProps } from './VInput.types';
 
-defineProps<VInputProps>();
-
-const classes = computed(() => [
-  'input',
-]);
+withDefaults(defineProps<VInputProps>(), {
+  type: 'text',
+});
 
 </script>
 
 <template>
   <!-- eslint-disable-next-line vuejs-accessibility/label-has-for -->
-  <label :class="classes">
+  <label class="input">
     <span class="input__label-text" v-if="label">{{ label }}</span>
     <input
       v-if="type !== 'phone'"
       v-bind="$attrs"
       class="input__input-field"
-      type="type"
+      :type="type"
     >
     <input
       v-if="type === 'phone'"
@@ -44,6 +41,7 @@ const classes = computed(() => [
     &__label-text {
       display: block;
       color: $color-main-light;
+      user-select: none;
 
       @include text-second;
     }
@@ -55,7 +53,6 @@ const classes = computed(() => [
       background: $color-main-lighter;
       border: none;
       outline: none;
-      transition: .2s;
 
       @include text-second;
 
@@ -73,6 +70,7 @@ const classes = computed(() => [
       display: block;
       white-space: nowrap;
       color: $color-second;
+      user-select: none;
 
       @include text-second;
     }
