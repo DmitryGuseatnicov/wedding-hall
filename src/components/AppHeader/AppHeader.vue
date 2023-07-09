@@ -88,7 +88,7 @@ const handleCallButtonClick = () => {
     }
 
     &__bottom {
-      margin: 40px auto;
+      margin: 40px auto 0 auto;
       max-width: 1318px;
 
       @include mobile {
