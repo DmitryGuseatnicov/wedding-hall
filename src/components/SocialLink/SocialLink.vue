@@ -17,19 +17,21 @@ const classes = computed(() => [
 </script>
 
 <template>
-  <a
-    class="social-link"
-    :class="classes"
-    :href="APP_SOCIAL_INFO[props.type]?.link"
-    target="_black"
-  >
+  <a class="social-link" :class="classes" :href="APP_SOCIAL_INFO[props.type]?.link" target="_black">
     <component :is="APP_SOCIAL_INFO[props.type]?.Icon" />
   </a>
 </template>
 
 <style lang="scss">
 .social-link {
+  transition: 0.2s;
   @include centered-flexbox;
+
+  @media (any-hover: hover) {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
 
   &_color_second {
     background-color: $color-second;

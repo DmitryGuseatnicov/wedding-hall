@@ -13,6 +13,7 @@ import { AppFooter } from './components/AppFooter';
 
 <style lang="scss">
 @import "https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap";
+@import 'https://fonts.googleapis.com/css2?family=Roboto&display=swap';
 
 *,
 *::before,

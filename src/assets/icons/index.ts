@@ -5,4 +5,6 @@ export { default as IcWhatsUp } from "./social/IcWhatsUp.vue";
 export { default as IcArrow } from "./common/IcArrow.vue";
 export { default as IcLogo } from "./common/IcLogo.vue";
 export { default as IcMapPin } from "./common/IcMapPin.vue";
-export { default as IcMenu } from "./common//IcMenu.vue";
+export { default as IcMenu } from "./common/IcMenu.vue";
+export { default as IcClose } from "./common/IcClose.vue";
+export { default as IcLogoWhite } from "./common/IcLogoWhite.vue";

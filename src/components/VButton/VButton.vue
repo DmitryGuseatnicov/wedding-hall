@@ -17,7 +17,7 @@ const props = withDefaults(defineProps<VButtonProps>(), {
 });
 
 const classes = computed(() => [
-  'custom-button',
+  'v-button',
   FILL_VARIANTS[props.fill],
   SIZE_VARIANTS[props.size],
   COLOR_VARIANTS[props.color],
@@ -28,13 +28,13 @@ const classes = computed(() => [
 <template>
   <button :class="classes">
     <component
-      class="custom-button__icon"
+      class="v-button__icon"
       v-if="props.icon.component && props.icon.slot === 'start'"
       :is="props.icon.component"
     />
     <slot />
     <component
-      class="custom-button__icon"
+      class="v-button__icon"
       v-if="props.icon.component && props.icon.slot === 'end'"
       :is="props.icon.component"
     />
@@ -42,7 +42,7 @@ const classes = computed(() => [
 </template>
 
 <style lang="scss">
-.custom-button {
+.v-button {
   background: transparent;
   border: none;
   transition: 0.2s;
@@ -82,14 +82,14 @@ const classes = computed(() => [
   &_fill_outlined {
     border: 2px solid;
 
-    &.custom-button_color_second {
+    &.v-button_color_second {
       border-color: $color-second;
       color: $color-second;
     }
   }
 
   &_fill_solid {
-    &.custom-button_color_second {
+    &.v-button_color_second {
       background: $color-second;
       color: #fff;
     }

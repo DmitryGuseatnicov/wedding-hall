@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { HallInfo } from '@/components/HallInfo';
 import { computed, ref } from 'vue';
+
+import { HallInfo } from '@/components/HallInfo';
 
 import { HallsSchemesProps } from './HallsSchemes.types';
 
@@ -59,6 +60,10 @@ const hallInfo = computed(() => props.halls.find((hall) => hall.name === current
   &__tabs {
     margin-top: 16px;
     display: flex;
+
+    @include mobile {
+      justify-content: center;
+    }
   }
 
   &__tab {

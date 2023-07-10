@@ -73,6 +73,7 @@ const handleCallButtonClick = () => {
 
 <style lang="scss">
   .header {
+    position: relative;
     border-radius: 0px 0px 16px 16px;
     box-shadow: 0px 4px 4px 0px #0000000D;
 
@@ -88,10 +89,6 @@ const handleCallButtonClick = () => {
     }
 
     &__bottom {
-      margin: 40px auto 0 auto;
-      max-width: 1318px;
-
-      @include mobile {
         position: absolute;
         top: 76px;
         left: 0;
@@ -99,9 +96,25 @@ const handleCallButtonClick = () => {
         margin: 0;
         padding-top: 40px;
         width: 100%;
-        height: 100%;
+        height: fit-content;
         z-index: 10;
         background: #fff;
+
+        @include mobile {
+          animation-name: fade-in-down;
+          animation-duration: 0.4s;
+        }
+
+        @include tablet {
+          animation-name: fade-in-down;
+          animation-duration: 0.4s;
+        }
+
+        @include desktop {
+          padding-top: 0;
+          position: static;
+          margin: 40px auto 0 auto;
+          max-width: 1318px;
       }
     }
 

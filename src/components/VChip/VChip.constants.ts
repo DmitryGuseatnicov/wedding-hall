@@ -1,4 +1,4 @@
 export const SIZE_VARIANTS = {
-  small: 'chip_size_small',
-  medium: 'chip_size_medium',
+  small: 'v-chip_size_small',
+  medium: 'v-chip_size_medium',
 };

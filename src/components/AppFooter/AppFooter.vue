@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { IcLogo } from '@/assets/icons';
+import { IcLogoWhite } from '@/assets/icons';
 import { SocialLink } from '@/components/SocialLink';
 
 </script>
@@ -8,7 +8,7 @@ import { SocialLink } from '@/components/SocialLink';
   <footer class="app-footer">
     <div class="app-footer__inner">
       <div class="app-footer__info-content">
-        <IcLogo class="app-footer__logo"/>
+        <IcLogoWhite class="app-footer__logo"/>
           <div class="app-footer__social-block">
           <h4 class="app-footer__social-title">Мы в соц. сетях</h4>
           <div class="app-footer__social-links">

@@ -6,13 +6,14 @@ import { IcArrow } from '@/assets/icons';
 import { useBooleanState, useBreakpoints } from '@/hooks';
 
 import { BanquetQuizSteps, BanquetQuizStepsValues } from './BanquetQuiz.types';
-import { BANQUET_QUIZ_BY_STEP } from './BanquetQuiz.constants';
+import { BANQUET_QUIZ_BY_STEP, BANQUET_QUIZ_DEFAULT_VALUES } from './BanquetQuiz.constants';
 import { validateQuizValues } from './BanquetQuiz.utils';
 
 const { breakPointType } = useBreakpoints();
 const [isQuizVisible, showQuiz] = useBooleanState(false);
 
 const currentStep = ref(BanquetQuizSteps.PERSONS);
+const isFormSendSuccess = ref(false);
 const totalSteps = Object.keys(BanquetQuizSteps).length / 2;
 const isLastStep = computed(() => currentStep.value + 1 < totalSteps);
 
@@ -24,7 +25,13 @@ const handleDraftValuesChange = (values: BanquetQuizStepsValues[typeof currentSt
 };
 
 const handleFormSubmit = () => {
-  console.log(quizValues);
+  isFormSendSuccess.value = true;
+};
+
+const handleRepeatButtonClick = () => {
+  Object.assign(quizValues, BANQUET_QUIZ_DEFAULT_VALUES);
+  isFormSendSuccess.value = false;
+  currentStep.value = BanquetQuizSteps.PERSONS;
 };
 
 </script>
@@ -56,6 +63,17 @@ const handleFormSubmit = () => {
             @onQuizValuesChange="handleDraftValuesChange"
           />
         </div>
+        <p class="banquet-quiz__message" v-if="isFormSendSuccess">
+          Спасибо, скоро с вами свяжется администратор!
+          <VButton
+            class="banquet-quiz__repeat-button"
+            fill="clear"
+            size="content"
+            @click="handleRepeatButtonClick"
+          >
+              Пройти еще раз
+          </VButton>
+        </p>
         <div class="banquet-quiz__next-button">
           <VButton
             :icon="{slot: 'end', component: IcArrow}"
@@ -64,7 +82,7 @@ const handleFormSubmit = () => {
             :type="isLastStep ? 'submit' : 'button'"
 
           >
-            {{ isLastStep ?  'Следующий вопрос' : 'Забронировать' }}
+            {{ isLastStep ?  'Следующий вопрос': 'Забронировать' }}
           </VButton>
         </div>
       </div>
@@ -148,6 +166,18 @@ const handleFormSubmit = () => {
     margin-top: 32px;
   }
 
+  &__message {
+    padding: 0 40px;
+
+      @include mobile {
+        padding: 0px 16px;
+      }
+  }
+
+  &__repeat-button {
+    color: $color-second;
+  }
+
   &__next-button {
     padding: 32px 40px;
 
@@ -158,6 +188,7 @@ const handleFormSubmit = () => {
 
   &__banner {
     position: relative;
+    display: flex;
     background: url('../../assets/images/background.png') no-repeat center / cover;
     border-radius: 16px;
     max-width: 650px;
@@ -180,15 +211,18 @@ const handleFormSubmit = () => {
     top: -15px;
     bottom: 0;
     right: 0;
-    height: 100%;
+    height: calc(100% + 15px);
     object-fit: cover;
   }
 
   &__banner-text {
-    margin: 300px auto 32px 40px;
+    margin: auto auto 32px 40px;
     max-width: 476px;
     position: relative;
     z-index: 1;
+    color: $color-main-darkness;
+
+    @include text-main-medium;
   }
 
   &__start-button {

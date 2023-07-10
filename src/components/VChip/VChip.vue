@@ -8,7 +8,7 @@ const props = withDefaults(defineProps<VChipProps>(), {
 });
 
 const classes = computed(() => [
-  'chip',
+  'v-chip',
   SIZE_VARIANTS[props.size],
 ]);
 </script>
@@ -16,18 +16,18 @@ const classes = computed(() => [
 <template>
   <!-- eslint-disable-next-line vuejs-accessibility/label-has-for -->
   <label :class="classes">
-    <input class="chip__input" v-bind="$attrs" :type="type">
-    <span class="chip__text">{{ label }}</span>
+    <input class="v-chip__input" v-bind="$attrs" :type="type">
+    <span class="v-chip__text">{{ label }}</span>
   </label>
 </template>
 
 <style lang="scss">
-.chip {
+.v-chip {
   user-select: none;
   cursor: pointer;
 
   &_size_small {
-    .chip__text {
+    .v-chip__text {
       padding: 14px 24px 14px 40px;
 
       @include text-main-small;
@@ -45,7 +45,7 @@ const classes = computed(() => [
   }
 
   &_size_medium {
-    .chip__text {
+    .v-chip__text {
       padding: 12px 32px 12px 52px;
 
       &::before {

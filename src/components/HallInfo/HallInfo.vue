@@ -1,13 +1,17 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
 
+import { useBooleanState } from '@/hooks';
 import { VButton } from '@/components/VButton';
+import { ReserveModal } from '@/components/ReserveModal';
 
 import { HallInfoProps } from './HallInfo.types';
 
 defineProps<HallInfoProps>();
 
 const router = useRouter();
+
+const [isModalOpen, openModal, closeModal] = useBooleanState();
 </script>
 
 <template>
@@ -28,13 +32,14 @@ const router = useRouter();
       </div>
     </div>
     <div class="hall-info__buttons">
-      <VButton class="hall-info__button">
+      <VButton class="hall-info__button" @click="openModal">
         Забронировать
       </VButton>
       <VButton class="hall-info__button" fill="outlined" @click="router.push('/gallery')">
         Посмотреть галерею
       </VButton>
     </div>
+    <ReserveModal :isOpen="isModalOpen" @onClose="closeModal"/>
   </div>
 </template>
 

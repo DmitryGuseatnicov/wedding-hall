@@ -20,3 +20,14 @@ export const BANQUET_QUIZ_VALIDITY = {
   [BanquetQuizSteps.BUDGET]: false,
   [BanquetQuizSteps.CONTACTS_INFO]: false,
 };
+
+export const BANQUET_QUIZ_DEFAULT_VALUES = {
+  [BanquetQuizSteps.PERSONS]: '',
+  [BanquetQuizSteps.EVENT_TYPE]: '',
+  [BanquetQuizSteps.OPTIONS]: '',
+  [BanquetQuizSteps.BUDGET]: '',
+  [BanquetQuizSteps.CONTACTS_INFO]: {
+    name: '',
+    phone: '',
+  },
+};
