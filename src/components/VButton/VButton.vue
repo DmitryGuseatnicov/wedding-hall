@@ -21,7 +21,6 @@ const classes = computed(() => [
   FILL_VARIANTS[props.fill],
   SIZE_VARIANTS[props.size],
   COLOR_VARIANTS[props.color],
-  'some',
 ].join(' '));
 
 </script>
