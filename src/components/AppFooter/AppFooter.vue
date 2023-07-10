@@ -28,6 +28,7 @@ import { SocialLink } from '@/components/SocialLink';
 
 <style lang="scss">
 .app-footer {
+  margin-top: 32px;
   background: $color-main-dark;
   border-radius: 20px 20px 0px 0px;
 

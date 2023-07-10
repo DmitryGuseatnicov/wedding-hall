@@ -1,8 +1,13 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
+
 import { VButton } from '@/components/VButton';
+
 import { HallInfoProps } from './HallInfo.types';
 
 defineProps<HallInfoProps>();
+
+const router = useRouter();
 </script>
 
 <template>
@@ -26,7 +31,7 @@ defineProps<HallInfoProps>();
       <VButton class="hall-info__button">
         Забронировать
       </VButton>
-      <VButton class="hall-info__button" fill="outlined" >
+      <VButton class="hall-info__button" fill="outlined" @click="router.push('/gallery')">
         Посмотреть галерею
       </VButton>
     </div>
@@ -36,6 +41,7 @@ defineProps<HallInfoProps>();
 <style lang="scss">
 .hall-info {
   padding: 24px 16px;
+  border-radius: 16px;
   box-shadow: 0px 8px 16px 0px #2223241A;
 
   @include desktop {

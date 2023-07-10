@@ -1,5 +1,5 @@
 <template>
   <div class="home">
-      Not Found
+      In Progress
   </div>
 </template>
