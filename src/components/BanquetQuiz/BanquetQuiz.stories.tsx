@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
-import { AppFooter } from '.';
+import { BanquetQuiz } from '.';
 
-const Template = () => <AppFooter />;
+const Template = () => <BanquetQuiz />;
 
 const meta = {
-  title: 'components/AppFooter',
+  title: 'components/BanquetQuiz',
   component: Template,
   tags: ['autodocs'],
 } as Meta;

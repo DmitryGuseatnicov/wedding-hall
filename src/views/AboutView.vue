@@ -1,5 +1,9 @@
+<script setup lang="ts">
+import { BanquetQuiz } from '@/components/BanquetQuiz';
+</script>
+
 <template>
   <div class="home">
-      123
+      <BanquetQuiz />
   </div>
 </template>

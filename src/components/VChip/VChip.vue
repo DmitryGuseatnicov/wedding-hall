@@ -74,12 +74,24 @@ const classes = computed(() => [
       box-shadow: $drop-shadow-main;
     }
 
+    &:focus + span {
+      color: $color-main-darker;
+      border-color: $color-second;
+      box-shadow: $drop-shadow-main;
+    }
+
     &:checked + span::after {
       display: block;
     }
 
     &:disabled + span::before {
       opacity: 0.5;
+    }
+
+    @media (any-hover: hover) {
+      &:hover + span {
+        box-shadow: $drop-shadow-main;
+      }
     }
   }
 

@@ -46,10 +46,25 @@ const classes = computed(() => [
 .custom-button {
   background: transparent;
   border: none;
+  transition: 0.2s;
   cursor: pointer;
 
   @include text-second;
   @include centered-flexbox;
+
+  @media (any-hover: hover) {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &:active {
+    box-shadow: $drop-shadow-main;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
 
   &_size_fit-content {
     padding: 0;

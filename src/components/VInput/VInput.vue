@@ -49,6 +49,7 @@ withDefaults(defineProps<VInputProps>(), {
     &__input-field {
       margin-top: 5px;
       padding: 16px;
+      width: 100%;
       color: $color-main-darker;
       background: $color-main-lighter;
       border: none;
